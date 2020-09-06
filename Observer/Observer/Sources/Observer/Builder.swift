@@ -2,15 +2,16 @@ import Foundation
 
 class BurgerBuilder {
     private var observers: [Observer] = []
-    
     var index = 0
+    
+    let queue = DispatchQueue(label: "Burger")
     
     func order(customer: String, name: String) -> Int {
         defer { self.index += 1 }
         let itemNumber = self.index
         print("Received order \(name) from \(customer): \(itemNumber)")
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) { 
+        queue.asyncAfter(deadline: .now() + 0.5) { 
             self.observers.forEach( { $0.willAlertCustomer(customer, item: itemNumber) })
         }
         

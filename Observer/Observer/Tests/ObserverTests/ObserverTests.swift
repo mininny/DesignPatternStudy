@@ -13,7 +13,7 @@ final class ObserverTests: XCTestCase {
         let bltSandwich = builder.order(customer: "Mininny", name: "BLT Sandwich")
         let fries = builder.order(customer: "Fat Mininny", name: "Fries")
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue(label: "Test").asyncAfter(deadline: .now() + 3.0) {
             XCTAssertEqual(display.completedMenus.count, 3)
             XCTAssertEqual(display.completedMenus[0].item, cheeeseburger)
             XCTAssertEqual(display.completedMenus[1].item, bltSandwich)

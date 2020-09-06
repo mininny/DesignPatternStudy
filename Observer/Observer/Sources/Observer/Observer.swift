@@ -18,6 +18,10 @@ class BurgerDisplay: Observer {
     }
     
     func pickup(item: Int) {
-        self.completedMenus.removeAll(where: { $0.item == item })
+        let items = completedMenus.filter({ $0.item == item })
+        items.forEach { item in
+            print("\(item.customer) picked up order \(item.item)")
+            self.completedMenus.removeAll(where: { $0.item == item.item })
+        }
     }
 }
