@@ -3,7 +3,7 @@ class BurgerEater {
         case cheese, chicken, bacon, blt, bigMac
     }
     
-    private class BurgerMomento: Momento {
+    private class BurgerMemento: Memento {
         var money: Int64
         var burgers: [Burger]
         
@@ -16,7 +16,7 @@ class BurgerEater {
     var money: Int64
     var burgers: [Burger] = []
     
-    private var momento: BurgerMomento?
+    private var momento: BurgerMemento?
     
     init(money: Int64) {
         self.money = money
@@ -56,7 +56,7 @@ class BurgerEater {
     }
     
     func saveBurgers() {
-        let momento = BurgerMomento(money: self.money, burgers: self.burgers)
+        let momento = BurgerMemento(money: self.money, burgers: self.burgers)
         
         print("Saving burgers! 🧙‍♀️")
         
