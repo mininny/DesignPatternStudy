@@ -3,7 +3,7 @@ Examples/Implementations of Design Patterns outlined by GoF
 ## Creational Design Patterns
 * [Abstract Factory](Abstract%20Factory)
 * [Builder](Builder)
-* [Factory Method](Factory%20Method)
+* [Factory](Factory)
 * [Prototype](Prototype)
 * [Singleton](Singleton)
 
@@ -26,5 +26,5 @@ Examples/Implementations of Design Patterns outlined by GoF
 * [Observer](Observer)
 * [State](State)
 * [Strategy](Strategy)
-* [Template Method](Template%20Method)
+* [Template Method](Template)
 * [Visitor](Visitor)
